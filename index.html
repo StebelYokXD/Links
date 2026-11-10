@@ -49,6 +49,7 @@ nav{width:100%;margin-top:12px;display:flex;flex-direction:column;gap:12px}
   border:1px solid var(--accent);color:var(--text);text-decoration:none;
   transition:transform .2s;
 }
+.release+.release{margin-top:12px}
 .release:hover{transform:translateY(-2px)}
 .release:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .release:active{transform:none}
@@ -82,6 +83,15 @@ nav{width:100%;margin-top:12px;display:flex;flex-direction:column;gap:12px}
   <h1>Гость с другой планеты</h1>
   <p class="sub">Добро пожаловать в мой мир</p>
 
+  <a class="release" id="album" href="https://band.link/SHK5I" target="_blank" rel="noopener noreferrer">
+    <img class="cover" src="https://music-bandlink.s3.yandex.net/img/bandlinks/a7a78ce6-704e-4742-b108-254e64d4f077_1120_1120.jpeg" alt="Обложка альбома «Черновик моего сознания»" width="96" height="96" referrerpolicy="no-referrer">
+    <span class="release-text">
+      <span class="release-label" id="album-label">Альбом выйдет 20 ноября</span>
+      <span class="release-title">Черновик моего сознания</span>
+      <span class="release-cta" id="album-cta">Сделать пресейв</span>
+    </span>
+  </a>
+
   <a class="release" href="https://band.link/prizrakigsdp" target="_blank" rel="noopener noreferrer">
     <img class="cover" src="https://music-bandlink.s3.yandex.net/img/bandlinks/69fb5012-267c-43eb-9d77-61c71b8f5d92_1120_1120.jpeg" alt="Обложка релиза «Призраки»" width="96" height="96" referrerpolicy="no-referrer">
     <span class="release-text">
@@ -110,5 +120,14 @@ nav{width:100%;margin-top:12px;display:flex;flex-direction:column;gap:12px}
     </a>
   </nav>
 </main>
+<script>
+(function(){
+  var out=new Date(2026,10,20); // 20 ноября 2026
+  if(new Date()>=out){
+    document.getElementById("album-label").textContent="Новый альбом";
+    document.getElementById("album-cta").textContent="Слушать";
+  }
+})();
+</script>
 </body>
 </html>
